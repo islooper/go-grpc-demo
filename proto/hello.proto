@@ -1,0 +1,22 @@
+syntax = "proto3";
+package p1;
+option go_package = "./api/";
+
+message HelloRequest {
+	string username = 1;
+}
+
+message HelloResponse {
+	string message = 1;
+}
+
+message NoArgsRequest {
+}
+
+message NoArgsResponse {
+}
+
+service Hello {
+	rpc SayHello(HelloRequest) returns (HelloResponse){}
+	rpc NoArgs(NoArgsRequest) returns (NoArgsResponse){}
+}

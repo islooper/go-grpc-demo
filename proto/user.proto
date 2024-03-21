@@ -1,0 +1,23 @@
+syntax = "proto3";
+package p2;
+option go_package = "./api/";
+
+
+
+service User {
+    rpc Register(RegisterIn) returns (RegisterOut) {}
+}
+
+message RegisterIn {
+  string name = 1;
+  string headerUrl = 2;
+  string signature = 12;
+  string birthday = 6;
+  string countryCode = 7;
+  string more = 9;
+}
+
+message RegisterOut {
+  int32 code = 1;
+  string msg = 2;
+}
